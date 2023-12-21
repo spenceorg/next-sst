@@ -1,0 +1,1 @@
+- Add this flag for self-cert issues failed to fetch NODE_TLS_REJECT_UNAUTHORIZED=0 
