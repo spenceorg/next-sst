@@ -1,5 +1,5 @@
 import { useAuth } from "@/app/_lib";
-import { Card, Section } from "./_components";
+import { Card, Section, SPAPostPage } from "../_components";
 
 export default function Page() {
   const isAuth = useAuth();
@@ -7,6 +7,7 @@ export default function Page() {
   if (isAuth) {
     return (
       <Section>
+        <div>Page: dashboard</div>
         {[
           { title: "hello", description: "worlf" },
           { title: "hullo", description: "worlf" },
@@ -14,6 +15,7 @@ export default function Page() {
         ].map((props, i) => {
           return <Card key={i} {...props} />;
         })}
+        <SPAPostPage params={{ id: "12" }} />
       </Section>
     );
   }
