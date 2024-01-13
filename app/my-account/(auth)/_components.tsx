@@ -1,5 +1,6 @@
 "use client";
 
+import { useAuth } from "@/app/_lib";
 import useSWR from "swr";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
@@ -16,10 +17,18 @@ export function SPAPostPage({ params }: { params: { id: string } }) {
   if (!data) return <h1 className="text-2xl font-bold">Loading...</h1>;
 
   return (
-    <>
-      <h1 className="text-2xl font-bold">{data.title}</h1>
-      <p className="text-gray-500">{data.body}</p>
-    </>
+    <div>
+      <div style={{ border: "1px dotted orange" }}>
+        <span>
+          dynamic client data, stale-while-revalidate (
+          <a href="https://swr.vercel.app/ ">link ⤴️</a>)
+        </span>
+        <p>id: {data.id}</p>
+        <p>userId: {data.userId}</p>
+        <h1 className="text-2xl font-bold">title: {data.title}</h1>
+        <p className="text-gray-500">body: {data.body}</p>
+      </div>
+    </div>
   );
 }
 
@@ -60,4 +69,18 @@ export const Card = ({
       <p style={{ color: "black", fontSize: "14px" }}>{description}</p>
     </div>
   );
+};
+
+export const Dashboard = () => {
+  const isAuth = useAuth();
+
+  if (isAuth) {
+    return (
+      <Section>
+        <div>Page: dashboard</div>
+        <SPAPostPage params={{ id: "12" }} />
+      </Section>
+    );
+  }
+  return <div>loading</div>;
 };
