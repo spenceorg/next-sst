@@ -6,7 +6,7 @@ import { NextjsSite, StackContext } from "sst/constructs";
 export default {
   config(_input) {
     return {
-      name: "stackblitz-starters-padf7k",
+      name: "spencerpope-next",
       region: "us-east-1",
       profile: _input.stage === "prod" ? "spencerpope-prod" : "spencerpope-dev",
     };

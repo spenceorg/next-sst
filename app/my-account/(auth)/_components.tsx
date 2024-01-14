@@ -1,6 +1,5 @@
 "use client";
 
-import { useAuth } from "@/app/_lib";
 import useSWR from "swr";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
@@ -9,7 +8,7 @@ const fetcher = (url: string) => fetch(url).then((r) => r.json());
 // export function generateStaticParams() at build time.
 // See https://github.com/vercel/next.js/issues/54393
 export function SPAPage({ params }: { params: { id: string } }) {
-  const { data, error, isLoading, isValidating } = useSWR(
+  const { data, error, isLoading } = useSWR(
     `https://jsonplaceholder.typicode.com/posts/${params.id}`,
     fetcher
   );
