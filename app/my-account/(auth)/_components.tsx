@@ -45,25 +45,14 @@ export function SPAPage({ params }: { params: { id: string } }) {
 
 const Frame = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div style={{ border: "1px dotted orange", padding: "0.5rem" }}>
+    <div className="border-2 border-orange-500 border-dotted p-2">
       {children}
     </div>
   );
 };
 
 export const Section = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <section
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "1rem",
-        padding: "0.5rem",
-      }}
-    >
-      {children}
-    </section>
-  );
+  return <section className="grid p-2 gap-4">{children}</section>;
 };
 
 export const Dashboard = () => {

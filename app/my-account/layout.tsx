@@ -14,6 +14,9 @@ export default function DashboardLayout({
           <nav>
             <ul>
               <li>
+                <Link href="/">home →</Link>
+              </li>
+              <li>
                 <Link href="/my-account/dashboard">dashboard →</Link>
               </li>
               <li>
