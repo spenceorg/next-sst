@@ -21,7 +21,7 @@ export default async function Page() {
 
   return (
     <>
-      <div style={{ border: "1px dotted gray", padding: "0.5rem" }}>
+      <div className="border-2 border-gray-400 border-dotted p-2">
         <div>
           <span>
             prerendered cache with 3600 second (1 hour) revalidate lifetime (
