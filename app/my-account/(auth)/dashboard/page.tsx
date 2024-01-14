@@ -20,8 +20,8 @@ export default async function Page() {
   const data = await getData();
 
   return (
-    <div>
-      <div style={{ border: "1px dotted gray" }}>
+    <>
+      <div style={{ border: "1px dotted gray", padding: "0.5rem" }}>
         <div>
           <span>
             prerendered cache with 3600 second (1 hour) revalidate lifetime (
@@ -37,6 +37,6 @@ export default async function Page() {
         <p className="text-gray-500">body: {data.body}</p>
       </div>
       <Dashboard />
-    </div>
+    </>
   );
 }
